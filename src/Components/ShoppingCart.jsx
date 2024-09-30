@@ -2,7 +2,7 @@ import React from 'react';
 import './ShoppingCart.css'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuantity } from './CartSlice'; // Assuming you have action creators for increasing and decreasing item quantity
-
+import SuperCoin from './SuperCoin'; // Import the SuperCoin super component
 const ShoppingCart = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart.cartItems);
@@ -44,6 +44,7 @@ const ShoppingCart = () => {
       <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
     </div>
     <div>{totalAmount ? <div> 'The total amount is {totalAmount}</div> : ''}</div>
+    <SuperCoin /> 
     </>
   );
 };
